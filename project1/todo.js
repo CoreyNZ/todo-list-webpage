@@ -13,10 +13,26 @@ $(document).ready(function(e) {
 	});
 	
 	$('.sortlist').on('click','.delete',function(){
-		$(this).parent('li').effect('pulsate',function() {
-			$(this).remove(); 
-		});
+		$('#delete-dialog').dialog('open');
 	});
+	
+	
+	$('#delete-dialog').dialog({
+		modal: true, autoOpen: false,
+		buttons : {
+			"Yes": function () {
+					//need to do something here.
+				//$(this).parent('li').effect('pulsate',function() {
+					//$(this).remove(); 
+					//});
+           	
+			},
+			
+			"No": function () { 
+				$(this).dialog('close');}	
+			}
+	});
+	
 	
 	$('#add-todo').button({icons: { primary: "ui-icon-circle-plus"}})
 	$('#add-todo').button({
