@@ -1,5 +1,8 @@
 // will only execute once the DOM is ready for Javascript code to execute. 
 $(document).ready(function(e) {
+	var selectedTask;
+	
+	
 	//the icon 'ui-icon-circle-plus' is provided by jQuery UI
 	$('.sortlist').sortable({
 		//both lists have the class 'sortlist' so can be connectedWith just sortlist
@@ -13,6 +16,7 @@ $(document).ready(function(e) {
 	});
 	
 	$('.sortlist').on('click','.delete',function(){
+		selectedTask = $(this);
 		$('#delete-dialog').dialog('open');
 	});
 	
@@ -21,10 +25,14 @@ $(document).ready(function(e) {
 		modal: true, autoOpen: false,
 		buttons : {
 			"Yes": function () {
-					//need to do something here.
-				//$(this).parent('li').effect('pulsate',function() {
-					//$(this).remove(); 
-					//});
+				
+				//need to do something here.
+				selectedTask.parent('li').effect('pulsate',function() {
+					selectedTask.remove();
+				});
+				
+				$(this).dialog('close'); 
+				
            	
 			},
 			
