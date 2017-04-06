@@ -28,10 +28,11 @@ $(document).ready(function(e) {
 				
 				//need to do something here.
 				selectedTask.parent('li').effect('pulsate',function() {
-					selectedTask.remove();
+					$(this).remove();
 				});
 				
-				$(this).dialog('close'); 
+				$(this).dialog('close');
+				
 				
            	
 			},
