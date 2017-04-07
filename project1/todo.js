@@ -81,6 +81,7 @@ $(document).ready(function(e) {
 			},
 			"Cancel" : function() { 
 				$(this).dialog('close');
+				$('#task').val('');
 			}
 		}
 	
