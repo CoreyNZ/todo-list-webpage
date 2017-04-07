@@ -107,7 +107,7 @@ label {
   min-height: 30px;
 }
 
-.delete, .done {
+.delete, .done, .edit {
   font-family: ModernPictograms;
   font-size: .9em;
   display: inline-block;
@@ -123,6 +123,13 @@ label {
 .done {
   float: left;
   margin-right: 1em;
+  color: white; }
+
+.edit {
+  float: right; }
+
+.edit:hover {
+  background-color: cyan;
   color: white; }
 
 .delete {
