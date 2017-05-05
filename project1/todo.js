@@ -51,27 +51,17 @@ $(document).ready(function(e) {
 	$('#edit-dialog').dialog({
 		modal: true, autoOpen: false,
 		buttons : {
-			"Yes": function () {
-				
+			"Okay": function () {
 				//need to do something here.
-				selectedTask.parent('li').effect('pulsate',function() {
-					$(this).remove();
-				});
+				
 				
 				$(this).dialog('close');
 			},
 			
-			"No": function () { 
+			"Cancel": function () { 
 				$(this).dialog('close');}	
 			}
 	});
-	
-	
-	
-	
-	
-	
-	
 	
 	$('#add-todo').button({
 		icons: { primary: "ui-icon-circle-plus"}}).click(
