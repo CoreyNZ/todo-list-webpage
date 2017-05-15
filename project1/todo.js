@@ -3,6 +3,10 @@ $(document).ready(function(e) {
 	var selectedTask;
 	var editTask;
 	
+	$.ajax({
+		method: 'GET',
+		url: "http://localhost:8080/test_database"
+	}).then(redraw,ERROR_LOG);
 	
 	//the icon 'ui-icon-circle-plus' is provided by jQuery UI
 	$('.sortlist').sortable({
@@ -111,6 +115,21 @@ $(document).ready(function(e) {
 		}
 	
 	});
+	
+	
+/* Start of AJAX related programming */
+	
+	function addTask(taskName){
+		$.ajax({
+	    method: 'PUT',
+	    url: "http://localhost:8080/task/create/",
+	    data: JSON.stringify({
+			task: taskName
+		 }),
+		 contentType: "application/json",
+		 dataType: "json"
+	 }).then(success_func, ERROR_LOG);
+	}
 		
 
 }); // end ready
